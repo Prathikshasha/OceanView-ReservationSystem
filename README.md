@@ -39,5 +39,5 @@ Also includes:
 
 ## Test Login
 - Username: `admin`
-- Password: `admin1234`
+- Password: `admin123`
 
