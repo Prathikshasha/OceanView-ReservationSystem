@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Reservation Report</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .box { max-width: 700px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    input { padding: 8px; margin: 8px 10px 8px 0; }
+    button { padding: 10px 15px; }
+    .error { color: red; display: none; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Reservation Report (Date Range)</h2>
+
+  <p id="err" class="error">To date must be AFTER or equal to From date.</p>
+
+  <form action="ReservationReportServlet" method="get" onsubmit="return validateRange();">
+    <label>From:</label>
+    <input type="date" name="from" id="from" required>
+
+    <label>To:</label>
+    <input type="date" name="to" id="to" required>
+
+    <button type="submit">Generate Report</button>
+  </form>
+</div>
+
+<script>
+function validateRange(){
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+
+  if(from && to && to < from){
+    document.getElementById("err").style.display = "block";
+    return false;
+  }
+  document.getElementById("err").style.display = "none";
+  return true;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .box { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { padding: 10px 15px; }
+        .error { color: red; display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Login</h2>
+
+    <!-- ❌ Error message (shows only when ?error=1) -->
+    <p id="errorMsg" class="error">Invalid username or password!</p>
+
+    <form action="LoginServlet" method="post">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+    <a href="index.html">Back to Home</a>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error") === "1") {
+        document.getElementById("errorMsg").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

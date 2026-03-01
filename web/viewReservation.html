@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>View Reservation</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .box { max-width: 600px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { padding: 10px 15px; }
+        a { text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>View Reservation</h2>
+
+    <form action="ViewReservationServlet" method="get">
+        <label>Enter Reservation No:</label>
+        <input type="text" name="reservation_no" placeholder="R001" required>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+    <a href="DashboardServlet">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>
